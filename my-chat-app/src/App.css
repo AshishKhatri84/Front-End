@@ -1,0 +1,101 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* App.css */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.header-options {
+  display: flex;
+  gap: 10px;
+}
+
+.header-btn {
+  background-color: white;
+  color: #4CAF50;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.header-btn:hover {
+  background-color: #45a049;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  overflow: auto;
+}
+
+.chat-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chat-box {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  background-color: #e5ddd5;
+}

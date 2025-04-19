@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Train Animation</title>
+  <style>
+    body {
+      text-align: center;
+      background-color: #f5f5f5;
+      font-family: Arial, sans-serif;
+    }
+    
+    .train-container {
+      position: relative;
+      width: 400px;
+      height: 200px;
+      margin: 50px auto;
+    }
+    
+    #train {
+      position: absolute;
+      bottom: 20px;
+      left: 50px;
+    }
+    
+    .smoke {
+      position: absolute;
+      border-radius: 50%;
+      background-color: #b0a7a7;
+      opacity: 0.8;
+    }
+    
+    h2 {
+      color: #00008b;
+      margin-top: 30px;
+    }
+    
+    button {
+      margin: 10px;
+      padding: 5px 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="train-container">
+    <img id="train" src="https://png.pngtree.com/png-clipart/20211024/original/pngtree-steam-green-train-cartoon-cute-retro-png-image_6868007.png" alt="Green Train" width="150">
+    <!-- Smoke elements will be added here by JavaScript -->
+  </div>
+  
+  <h2>Click the following buttons to handle animation</h2>
+  
+  <button id="startBtn">Start</button>
+  <button id="stopBtn">Stop</button>
+
+  <script>
+    // Main animation variables
+    const train = document.getElementById('train');
+    const container = document.querySelector('.train-container');
+    let trainPosition = 50;
+    let direction = 1;
+    let animationId;
+    let smokeInterval;
+    
+    // Start the animation
+    function startAnimation() {
+      // Clear any existing animation
+      stopAnimation();
+      
+      // Start the train movement
+      animationId = setInterval(moveTrain, 50);
+      
+      // Start the smoke effect
+      smokeInterval = setInterval(createSmoke, 500);
+    }
+    
+    // Stop the animation
+    function stopAnimation() {
+      clearInterval(animationId);
+      clearInterval(smokeInterval);
+      
+      // Remove all smoke elements
+      const smokes = document.querySelectorAll('.smoke');
+      smokes.forEach(smoke => smoke.remove());
+    }
+    
+    // Move the train back and forth
+    function moveTrain() {
+      trainPosition += direction * 2;
+      
+      // Change direction when reaching edges
+      if (trainPosition > 250) {
+        direction = -1;
+      } else if (trainPosition < 50) {
+        direction = 1;
+      }
+      
+      train.style.left = trainPosition + 'px';
+    }
+    
+    // Create a smoke puff
+    function createSmoke() {
+      const smoke = document.createElement('div');
+      smoke.className = 'smoke';
+      
+      // Position smoke above the train's chimney
+      const trainRect = train.getBoundingClientRect();
+      const containerRect = container.getBoundingClientRect();
+      
+      // Adjust these values based on where the chimney is on your train image
+      const smokeX = trainPosition + 75;
+      const smokeY = 60;
+      
+      // Initial smoke properties
+      smoke.style.left = smokeX + 'px';
+      smoke.style.top = smokeY + 'px';
+      smoke.style.width = '10px';
+      smoke.style.height = '10px';
+      
+      container.appendChild(smoke);
+      
+      // Animate each smoke puff
+      let opacity = 0.8;
+      let size = 10;
+      let posY = smokeY;
+      
+      const smokeAnimation = setInterval(() => {
+        opacity -= 0.02;
+        size += 1;
+        posY -= 1;
+        
+        smoke.style.opacity = opacity;
+        smoke.style.width = size + 'px';
+        smoke.style.height = size + 'px';
+        smoke.style.top = posY + 'px';
+        
+        // Remove smoke when it fades out completely
+        if (opacity <= 0) {
+          clearInterval(smokeAnimation);
+          smoke.remove();
+        }
+      }, 50);
+    }
+    
+    // Add button event listeners
+    document.getElementById('startBtn').addEventListener('click', startAnimation);
+    document.getElementById('stopBtn').addEventListener('click', stopAnimation);
+  </script>
+</body>
+</html>

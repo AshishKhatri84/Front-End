@@ -1,0 +1,366 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Fallback background color */
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('dna.jpg'); /* Background image */
+    background-size: contain;
+    opacity: 0.4;
+    z-index: -1; /* Send to back */
+}
+
+#Biotech {
+    position: relative;
+    z-index: 1;
+}
+
+.gif-container {
+    position: absolute;
+    top: 80%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 0x; /* Adjust the width of your GIF */
+    height: auto;
+    zoom: 70%;
+    border-radius: 50%; /* Make the borders rounded */
+    overflow: hidden; /* Hide overflow content outside the border */
+    max-width: 100%; /* Ensure the GIF doesn't exceed the width of its container */
+}
+
+.gif-container img {
+    width: 100%; /* Make the GIF responsive, filling the width of its container */
+    height: auto; /* Automatically adjust the height to maintain aspect ratio */
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.logo a {
+    font-family: 'Jokerman', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 36px; /* Adjust the font size */
+    color: #fff; /* Choose a color */
+    padding: 80px;
+    text-transform: uppercase; /* Transform text to uppercase */
+    letter-spacing: 2px; /* Adjust letter spacing */
+    text-decoration: none; /* Remove underline */
+}
+
+.logo a:hover::before {
+    content: "\1F451"; /* Unicode character for a crown */
+    position: absolute;
+    top: -5px;
+    left: 70px; /* Adjust the left position as needed */
+    color: #ffd700; /* Color of the shining crown */
+    transform: rotate(-30deg); /* Tilt the crown towards the left */
+    animation: shine 1s infinite alternate; /* Animation for the shining effect */
+}
+
+.logo a:hover::after {
+    content: "★"; /* Unicode character for a star */
+    position: absolute;
+    top: -5px;
+    color: #ffd700; /* Color of the shining stars */
+    animation: shine 1s infinite alternate; /* Animation for the shining effect */
+}
+
+@keyframes shine {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@media (max-width: 768px) {
+    .header {
+        padding: 10px; /* Adjust header padding */
+    }
+
+    .logo {
+        font-size: 20px; /* Decrease logo font size */
+    }
+
+    .logo a:hover::before {
+        font-size: 20px; /* Decrease logo font size */
+    } 
+    .logo a:hover::after {
+        font-size: 20px; /* Decrease logo font size */
+    }
+
+    .gif-container {
+        display: 10x;
+    }
+
+    body {
+        background-size: contain; /* Adjust background size for better fit */
+        background-position: center;
+    }
+
+    iframe {
+        width: 100%; /* Set the width of iframes to 100% for smaller screens */
+        height: auto; /* Ensure aspect ratio is maintained */
+    }    
+
+    #applications {
+        padding: 20px; /* Add padding to the section */
+    }
+
+    .application-boxes {
+        display: grid; /* Use grid layout for the application boxes */
+        grid-template-columns: 1fr; /* Display one column for smaller screens */
+        gap: 20px; /* Add gap between boxes */
+    }
+
+    .application-box {
+        /* Adjust individual box styles as needed */
+        padding: 20px;
+        background-color: #f0f0f0;
+        border-radius: 10px;
+    }
+    .aspect-boxes {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Two columns on smaller screens */
+        gap: 20px; /* Add some gap between boxes */
+    }
+
+    .aspect-box {
+        width: 100%; /* Each box takes up full width */
+        margin-bottom: 20px; /* Add some space between boxes */
+    }
+
+    .aspect-box img {
+        width: 100%; /* Make images responsive */
+        height: auto;
+    }
+
+    .aspect-box p {
+        text-align: center; /* Center text */
+    }    
+
+    #Biotech {
+        padding: 20px; /* Add padding to the Biotech section */
+    }
+    .gif-container {
+        float: right;
+        margin-right: 10px; /* Adjust margin as needed */
+    }
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 40px;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #ADD8E6; /* Change color on hover */
+}
+
+.special-paragraph {
+    margin-bottom: 40px;
+}
+
+main {
+    padding: 20px;
+}
+
+.dropdown-content {
+    display: none;
+    flex-wrap: wrap;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 500px;
+    padding: 20px;
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 50%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.7);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content .column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    color: #333; /* Adjust color as needed */
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+    color: #000;
+    text-decoration: none;
+    font-size: 18px; /* Adjust the font size */
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+/* Header Animation */
+header {
+    animation: fadeInDown 1s ease;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#aspect-of-biotech {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.aspect-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.aspect-box {
+    width: 30%;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.aspect-box:hover {
+    transform: translateY(-5px);
+}
+
+.aspect-box img {
+    width: 100%;
+    height: auto;
+}
+
+.aspect-box p {
+    margin: 10px 0;
+    font-weight: bold;
+    font-size: 18px;
+}
+#articles {
+    background-color: #f9f9f9;
+    text-align: center;
+    margin-top: 10px;
+    border-bottom-left-radius: 40%;
+    border-bottom-right-radius: 40%;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.articles-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.articles-box {
+    background-color: #f9f9f9;
+    width: 30%;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.articles-box:hover {
+    transform: translateY(-5px);
+}
+
+.articles-box p {
+    margin: 10px 0;
+    font-weight: bold;
+    font-size: 14px;
+}
+#applications {
+    padding: 30px 0;
+}
+
+#applications h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.application-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.application-box {
+    width: calc(33.33% - 40px);
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.application-box h3 {
+    margin-top: -10px;
+}
+
+.application-box p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Adjust the gap between BioTech and Aspect Of BioTech */
+#Biotech {
+    margin-bottom: 30px;
+}
+
+#Aspect_Of_BioTech {
+    padding-top: 30px;
+}
+
+
+/* Adjust the gap between Articles and Videos */
+#articles, #videos {
+    margin-bottom: 60px; /* Double the original margin */
+}
+
+

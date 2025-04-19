@@ -1,0 +1,403 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#h {
+    text-decoration: none;
+    color: #4a90e2;
+    font-weight: bold;
+}
+
+#q:hover {
+    font-weight: bold;
+    color: #4a90e2;
+}
+
+p {
+    margin: 0 0 15px;
+}
+
+/* Header */
+header {
+    background: linear-gradient(to right, #4a90e2, #9013fe);
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+    position: relative;
+}
+
+header .header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header h1 span {
+    color: #ffcc00;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+header nav a {
+    color: white;
+    font-weight: 600;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+header nav a:hover {
+    background-color: #ffcc00;
+    color: black;
+}
+
+/* Section Container: Grid for Header and Content */
+.section-container {
+    display: grid;
+    grid-template-columns: 60px 1fr; /* Left column for header, right column for content */
+    gap: 20px;
+    align-items: start; /* Align items at the top */
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+/* Section Header */
+.section-header {
+    background: #4a90e2;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    height: 100%; /* Ensure the header only takes necessary space */
+}
+
+.section-header.vertical {
+    writing-mode: vertical-rl; /* Vertical text */
+    transform: rotate(180deg); /* Flip vertical text for readability */
+    text-align: left;
+    border-radius: 8px 0 0 8px;
+}
+
+/* Content Containers */
+.content-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.content-container img.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* About Section */
+#about {
+    padding: 50px 20px;
+    background: #f8f8f8;
+    display: flex;
+    align-items: center; /* Keeps image & text aligned properly */
+    justify-content: flex-start; /* Image on the left, text on the right */
+    gap: 40px; /* Space between image and text */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Image Flip Effect - Wrapped in a Separate Container */
+#about .about-photo-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    perspective: 1000px; /* Adds 3D depth */
+    flex-shrink: 0; /* Prevents shrinking */
+}
+
+/* Wrapper for Flipping Effect */
+#about .photo-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    border-radius: 50%;
+}
+
+/* Rotate on Hover */
+#about .about-photo-container:hover .photo-wrapper {
+    transform: rotateY(180deg);
+}
+
+/* Front & Back Images */
+#about .profile-photo,
+#about .back-photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    backface-visibility: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Back Photo (Initially Hidden) */
+#about .back-photo {
+    transform: rotateY(180deg);
+}
+
+/* About Text Container */
+.about-text-container {
+    flex: 1; /* Takes remaining space and prevents text from going below */
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: left;
+}
+
+#experience img.profile-photo:hover {
+    transform: scale(1.05);
+}
+
+/* Skills Section */
+#skills {
+    padding: 50px 20px;
+    background: #f8f8f8;
+    text-align: center;
+    padding: 20px
+}
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 20px;
+}
+
+.skill {
+    text-align: center;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.skill:hover {
+    transform: scale(1.05);
+}
+
+.skill img {
+    width: 180px;
+    height: 120px;
+    margin-bottom: 10px;
+}
+
+/* Projects Section */
+#projects {
+    padding: 50px 20px;
+    background: #f8f8f8;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.project-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-card:hover {
+    transform: translateY(-15px);
+}
+
+.project-card img {
+    width: 280px;
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+.project-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    color: #4a90e2;
+}
+
+.project-card a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #4a90e2;
+    color: white;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.project-card a:hover {
+    background-color: #9013fe;
+}
+
+/* Achievements Section */
+#achievements {
+    padding: 50px 20px;
+    background: #f8f8f8;
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.achievement {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.achievement:hover {
+    transform: scale(1.05);
+}
+
+.achievement img {
+    width: 180px;
+    height: 120px;
+    margin-bottom: 10px;
+}
+
+.achievement h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #4a90e2;
+}
+
+/* V-Shape inside Achievement */
+.v-shape {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .v-shape img {
+    width: 48%;
+    height: auto;
+    transform-origin: top center;
+    transition: transform 0.3s ease;
+  }
+  
+  .left-img {
+    transform: rotate(-25deg);
+  }
+  
+  .right-img {
+    transform: rotate(25deg);
+  }
+  
+  /* Responsive tweaks */
+  @media (max-width: 600px) {
+    .v-shape {
+      max-width: 160px;
+    }
+  
+    .v-shape img {
+      width: 45%;
+    }
+  }
+  
+
+/* Contact Section */
+#contact {
+    text-align: center;
+    padding: 50px 20px;
+    background: #f8f8f8;
+}
+.content-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center align the content horizontally */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.contact-info {
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    gap: 10px;
+}
+
+.contact-info img.icon {
+    width: 34px;
+    height: 34px;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: #4a90e2;
+}
+
+.contact-info img.icon:hover {
+    transform: scale(1.25);
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 30px;
+    font-size: 0.9rem;
+}

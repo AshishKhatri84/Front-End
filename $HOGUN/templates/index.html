@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Fraud Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="header">
+        <div class="logo"><a href="#home">$hogun</a></div>
+        <nav class="menu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Products & Pricing</a>
+                    <div class="dropdown-content">
+                        <div class="column">
+                            <a href="#">Pricing</a>
+                            <a href="#">Atlas</a>
+                            <a href="#">Billing</a>
+                            <a href="#">Capital</a>
+                            <a href="#">Checkout</a>
+                            <a href="#">Climate</a>
+                            <a href="#">Connect</a>
+                        </div>
+                        <div class="column">
+                            <a href="#">Data Pipeline</a>
+                            <a href="#">Elements</a>
+                            <a href="#">Financial Connections</a>
+                            <a href="#">Identity</a>
+                            <a href="#">Invoicing</a>
+                            <a href="#">Issuing</a>
+                            <a href="#">Link</a>
+                        </div>
+                        <div class="column">
+                            <a href="#">Payments</a>
+                            <a href="#">Payment Links</a>
+                            <a href="#">Payouts</a>
+                            <a href="#">Radar</a>
+                            <a href="#">Revenue Recognition</a>
+                            <a href="#">Sigma</a>
+                            <a href="#">Tax</a>
+                        </div>
+                        <div class="column">
+                            <a href="#">Terminal</a>
+                            <a href="#">Treasury</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Solutions</a>
+                    <div class="dropdown-content">
+                        <div class="column">
+                            <a href="#">Start-ups</a>
+                            <a href="#">Enterprises</a>
+                            <a href="#">SaaS</a>
+                            <a href="#">Platforms</a>
+                            <a href="#">E-Commerce</a>
+                            <a href="#">Marketplaces</a>
+                            <a href="#">Crypto</a>
+                        </div>
+                        <div class="column">
+                            <a href="#">Creator economy</a>
+                            <a href="#">Embedded finance</a>
+                            <a href="#">Global businesses</a>
+                            <a href="#">Finance automation</a>
+                            <a href="#">Integrations & Custom Solutions</a>
+                            <a href="#">Stripe App Marketplace</a>
+                            <a href="#">Partner ecosystem</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="background">
+        <div class="bubble bubble1"></div>
+        <div class="bubble bubble2"></div>
+        <div class="bubble bubble3"></div>
+    </div>
+    <div id="home" class="container">
+        <h1>Credit Card Fraud Detection</h1>
+        <div class="upload-container">
+            <form id="fraud-detection-form" enctype="multipart/form-data">
+                <label for="csv-file">Upload CSV File:</label>
+                <input type="file" id="csv-file" name="csv-file" accept=".csv" required>
+                <button type="submit" id="detect-fraud-btn">Detect Fraud</button>
+            </form>
+            <p class="upload-info">Upload a CSV file containing credit card data to detect fraud.</p>
+        </div>
+    </div>
+    <div id="result" class="container hidden">
+        <h1>Result</h1>
+        <div id="result-content" class="result">
+            <!-- Result will be displayed here -->
+        </div>
+    </div>
+    <div id="about" class="container about">
+        <h1>About</h1>
+        <p>Welcome to $hogun, your trusted partner in credit card fraud detection and prevention. At $hogun, we understand the importance of secure transactions and protecting our clients' financial assets.</p>
+        <p>With years of experience in the fintech industry, our team of experts has developed cutting-edge algorithms and machine learning models to detect and prevent fraudulent activities in real-time.</p>
+        <p>We are committed to providing reliable and efficient fraud detection solutions tailored to the unique needs of businesses, financial institutions, and e-commerce platforms. Our advanced technologies help mitigate risks, safeguard transactions, and protect your bottom line.</p>
+        <p>At $hogun, we prioritize transparency, integrity, and customer satisfaction. We strive to empower businesses to thrive in a secure digital environment and build trust with their customers.</p>
+        <p>Join us in the fight against credit card fraud and let's create a safer and more secure financial ecosystem together.</p>
+    </div>
+    <div id="contact" class="container contact">
+        <h1>Contact</h1>
+        <p>If you have any questions or inquiries, feel free to reach out to us:</p>
+        <ul>
+            <li>Email: <a href="mailto:info@$hogun.com">info@$hogun.com</a></li>
+            <li>Phone: +1 (123) 456-7890</li>
+            <li>Social Media:
+                <ul>
+                    <li><a href="https://www.twitter.com/$hogun">Twitter</a></li>
+                    <li><a href="https://www.facebook.com/$hogun">Facebook</a></li>
+                    <li><a href="https://www.linkedin.com/company/$hogun">LinkedIn</a></li></p>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 $hogun. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="static\js\script.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#fraud-detection-form').submit(function (event) {
+                event.preventDefault();
+                var form_data = new FormData($('#fraud-detection-form')[0]);
+                $.ajax({
+                    type: 'POST',
+                    url: '/predict',
+                    data: form_data,
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    success: function (data) {
+                        $('#result-content').html(data);
+                        $('#result').removeClass('hidden');
+                    },
+                });
+            });
+        });
+    </script>
+</body>
+</html>

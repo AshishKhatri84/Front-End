@@ -1,0 +1,311 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-image: url('2.jpg'); /* Add your background image URL here */
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 255, 0.4); /* Blue */
+    animation-name: moveBubble;
+    animation-duration: 8s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.bubble1 {
+    width: 60px;
+    height: 60px;
+    top: 100px;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.bubble2 {
+    width: 80px;
+    height: 80px;
+    top: 300px;
+    left: 40%;
+    animation-delay: 2s;
+}
+
+.bubble3 {
+    width: 100px;
+    height: 100px;
+    top: 200px;
+    left: 70%;
+    animation-delay: 4s;
+}
+
+@keyframes moveBubble {
+    0% { transform: translateY(-100px); }
+    50% { transform: translateY(100px); }
+    100% { transform: translateY(-100px); }
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.75); /* Semi-transparent white background */
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+h1 {
+    text-align: center;
+    color: #007bff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+input[type="text"] {
+    width: calc(100% - 40px);
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #0056b3;
+}
+
+button {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.result {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    font-size: 16px;
+    color: #333;
+    animation: slideIn 1s ease;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.75); /* Semi-transparent white background */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100% - 40px); /* Adjusted width */
+    z-index: 1000; /* Ensure the header is above other elements */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.container.about,
+.container.contact {
+    max-width: 1000px; /* Adjust the maximum width */
+    width: 100%; /* Adjust the width */
+    padding: 40px; /* Adjust the padding */
+    margin: 50px auto; /* Center the container horizontally */
+    border-radius: 20px; /* Add border radius for rounded corners */
+    text-align: left; /* Align text to the left */
+}
+
+.container.about h1,
+.container.contact h1 {
+    font-size: 18px; /* Adjust the heading font size */
+    text-align: left; /* Align text to the left */
+}
+
+.container.about p,
+.container.contact p {
+    font-size: 12px; /* Adjust the paragraph font size */
+    text-align: left; /* Align text to the left */
+}
+
+
+.header .logo a {
+    font-size: 24px;
+    text-decoration: none; 
+    color: #007bff; 
+}
+
+
+.upload-container {
+    text-align: center;
+}
+
+.upload-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.upload-container input[type="file"] {
+    display: block;
+    margin: 0 auto 20px auto;
+    padding: 10px;
+    border: 2px dashed #007bff;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    color: #333;
+    cursor: pointer;
+}
+
+.upload-container input[type="file"]:hover {
+    background-color: #e9ecef;
+}
+
+.upload-container button {
+    padding: 12px 40px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.upload-container button:hover {
+    background-color: #0056b3;
+}
+
+.upload-info {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Adjusting Contact link */
+.menu ul li:last-child a {
+    margin-right: 50px; /* Adjust as needed */
+}
+
+.menu {
+    margin-right: 20px; /* Added margin for menu alignment */
+}
+
+/* Your existing CSS styles */
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    display: inline-block;
+    margin-right: 20px;
+    position: relative;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.menu ul li a:hover {
+    color: #007bff;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    column-count: 3; /* Set the number of columns */
+    column-gap: 40px; /* Adjust the gap between columns */
+    padding: 20px; /* Add padding to the dropdown content */
+    left: -100px; /* Adjust the left position */
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px 0; /* Adjust padding */
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #e9ecef;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.footer {
+    background-color: #333;
+    padding: 20px 0;
+    text-align: center;
+    color: #ffffff;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.footer-content a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+

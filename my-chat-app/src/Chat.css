@@ -1,0 +1,220 @@
+/* src/Chat.css */
+body {
+    background-color: #f0f0f0; /* Change background color */
+    font-family: Arial, sans-serif; /* Change font family */
+    color: #333; /* Change text color */
+}
+.chat-container {
+    width: 100%;
+    height: 100%;
+    margin: 0px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-image: url('1.jpeg');
+    background-size: cover;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+}
+
+.chat-box {
+    display: flex;
+    flex-direction: column; /* Messages appear in a column */
+    border: 1px solid #ccc;
+    height: 300px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.8); /* Transparent background color */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Adjust padding as needed */
+    position: relative; /* Position relative to parent */
+}
+
+.user-input {
+    display: flex;
+}
+
+.user-input input[type="text"] {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.user-input button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1.5em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.user-input button.clicked {
+    background-color: #48adf6;
+    color: darkblue;
+}
+
+.message-bubble {
+    min-width: 10%;
+    max-width: 40%; /* Set a maximum width for the message bubble */
+    word-wrap: break-word; /* Allow long words to break and wrap onto the next line */
+    margin-bottom: 5px; /* Adjust spacing between messages */
+    border-radius: 10px; /* Rounded corners */
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 5px;
+    position: relative;
+}
+
+.left {
+    background-color: #a2f1f7; /* Background color for sender 1 */
+    align-self: flex-start; /* Align messages from sender 1 to the left */
+}
+
+.right {
+    background-color: #48adf6; /* Background color for sender 2 */
+    margin-left: auto;
+}
+
+.message-bubble img {
+    max-width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+.message-bubble video {
+    max-width: 100%;
+    height: auto;
+}
+
+.file-preview {
+    margin-top: 5px;
+    padding:10px;
+}
+
+.document-preview {
+    display: flex;
+    align-items: center;
+}
+
+.document-preview i {
+    margin-right: 5px;
+}
+
+.recording-controls {
+    display: flex;
+    align-items: center;
+}
+
+.recording-bar {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.recording-timer {
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.context-menu {
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+.context-menu button {
+    padding: 10px;
+    border: none;
+    background: none;
+    text-align: left;
+    width: 100%;
+}
+
+.context-menu button:hover {
+    background: #f5f5f5;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 1000;
+}
+
+.modal-content img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.modal-content iframe {
+    width: 100%;
+    height: 100%;
+}
+.message-timestamp {
+    position: absolute;
+    top: 100%;
+    right: 5%;
+    padding: 0;
+    font-size: 0.8em;
+    color: #000000;
+}
+
+.emoji-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: left;
+    margin-top: 10px;
+    border-radius: 10px; /* Rounded corners */
+}
+
+.emoji-category-btn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff; /* Adjust the text color */
+    background-color: #007bff; /* Adjust the active button background color */
+    padding: 5px 5px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.emoji-category-btn.active {
+    color: #000000; /* Adjust the text color */
+    background-color: #fff; /* Adjust the active button background color */
+}

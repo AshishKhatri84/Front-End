@@ -1,0 +1,108 @@
+/* styles.css */
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+    margin: 0;
+    background: linear-gradient(135deg, #34495e, #2ecc71);
+    color: white;
+}
+
+.calculator {
+    background: #2c3e50;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 90%; /* Adjust for small screens */
+    max-width: 350px; /* Max width for larger screens */
+    height: 90vh; /* Allow the height to adjust dynamically */
+    max-height: 90vh; /* Ensure it doesn't exceed the viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#display {
+    font-size: 1.8em;
+    padding: 15px;
+    background: #34495e;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: right;
+    color: #ecf0f1;
+    min-height: 60px;
+    word-wrap: break-word; /* Wrap text for long expressions */
+    max-height: 70px; /* Prevent display from taking too much space */
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    flex-grow: 1; /* Allow buttons to take up remaining space */
+}
+
+.btn {
+    font-size: 0.8em;
+    padding: 5px;
+    border: none;
+    background: #34495e;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s ease;
+    color: #ecf0f1;
+}
+
+.btn:hover {
+    background: #16a085;
+    transform: scale(1.05);
+}
+
+#equals {
+    grid-column: span 2;
+    background: #27ae60;
+}
+
+#clear {
+    background: #e74c3c;
+}
+
+#backspace {
+    background: #f39c12;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .btn {
+        font-size: 1.2em;
+        padding: 15px;
+    }
+
+    #display {
+        font-size: 1.6em;
+    }
+}
+
+#equals:hover {
+    background: #1abc9c;
+}
+
+#clear:hover {
+    background: #c0392b;
+}
+
+.history {
+    font-size: 0.8em;
+    color: #bdc3c7;
+    margin-bottom: 10px;
+}
+
+.operator {
+    background: #e67e22;
+}
+
+.operator:hover {
+    background: #d35400;
+}

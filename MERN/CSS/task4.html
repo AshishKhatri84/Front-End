@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Navigation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ffffff, #e3f2fd);
+            text-align: center;
+        }
+
+        /* Header Styling */
+        h2 {
+            background: #0277bd;
+            color: white;
+            padding: 15px;
+            margin: 0;
+            font-size: 24px;
+            text-transform: uppercase;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Sidebar Styling */
+        .sidenav {
+            width: 60px;
+            position: fixed;
+            left: 10px;
+            top: 70px;
+            padding-top: 10px;
+        }
+
+        .sidenav div {
+            width: 60px;
+            height: 50px;
+            margin-bottom: 10px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: left;
+            line-height: 50px;
+            border-radius: 8px;
+            transition: all 0.3s ease-in-out;
+            overflow: hidden;
+            white-space: nowrap;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        /* Hide text initially */
+        .sidenav div span {
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            position: absolute;
+            left: 40px; /* Position text outside the button */
+            top: 50%;
+            transform: translateY(-50%);
+            padding-left: 10px;
+        }
+
+        /* Expand and show text on hover */
+        .sidenav div:hover {
+            width: 180px;
+            padding-left: 15px;
+            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidenav div:hover span {
+            opacity: 1;
+        }
+
+        /* Sidebar Button Colors */
+        .green { background-color: #0da536; }
+        .blue { background-color: #007bff; }
+        .red { background-color: #f37821; }
+        .black { background-color: #2a2727; }
+
+        /* Fix text color */
+        .black:hover { color: white; }
+
+        /* Main Content */
+        .content {
+            margin-top: 80px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Hoverable Sidebar Navigation</h2>
+    
+    <div class="sidenav">
+        <div class="blue">🏠 <span>Home</span></div>
+        <div class="green">ℹ️ <span>About</span></div>
+        <div class="red">📞 <span>Contact</span></div>
+        <div class="black">🔗 <span>Socials</span></div>
+    </div>
+
+    <div class="content">
+        <p>Hover over the sidebar buttons to see their labels.</p>
+    </div>
+
+</body>
+</html>
