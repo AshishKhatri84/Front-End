@@ -185,6 +185,12 @@ header nav a:hover {
     transform: scale(1.05);
 }
 
+#profile {
+    text-align: center;
+    padding: 50px 20px;
+    background: #f8f8f8;
+}
+
 /* Skills Section */
 #skills {
     padding: 50px 20px;
@@ -324,7 +330,7 @@ header nav a:hover {
   }
   
   .v-shape img {
-    width: 48%;
+    width: 60%;
     height: auto;
     transform-origin: top center;
     transition: transform 0.3s ease;
@@ -353,7 +359,7 @@ header nav a:hover {
 /* Contact Section */
 #contact {
     text-align: center;
-    padding: 50px 20px;
+    padding: 20px 30px;
     background: #f8f8f8;
 }
 .content-container {
@@ -389,6 +395,34 @@ header nav a:hover {
 }
 
 .contact-info img.icon:hover {
+    transform: scale(1.25);
+}
+
+.profile-info {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 2.1rem;
+}
+
+.profile-info p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    gap: 30px;
+}
+
+.profile-info img.icon {
+    width: 54px;
+    height: 54px;
+}
+
+.profile-info i {
+    margin-right: 10px;
+    color: #4a90e2;
+}
+
+.profile-info img.icon:hover {
     transform: scale(1.25);
 }
 
