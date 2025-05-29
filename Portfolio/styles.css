@@ -22,6 +22,15 @@ a {
     font-weight: bold;
 }
 
+#x {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#x:hover {
+    color: #4a90e2;
+}
+
 #q:hover {
     font-weight: bold;
     color: #4a90e2;
